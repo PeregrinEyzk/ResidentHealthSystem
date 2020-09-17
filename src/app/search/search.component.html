@@ -1,0 +1,6 @@
+<app-search nzSearch [nzAddOnAfter]="suffixIconButton">
+    <input type="text" nz-input placeholder="input search text" />
+  </app-search>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
+  </ng-template>

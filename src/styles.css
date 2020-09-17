@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.anchorBL{
+    display:none;
+}
+.BMap_cpyCtrl{
+    display: none;
+}
+.BMap_scaleCtrl{
+    display: block;
+}
