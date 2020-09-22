@@ -7,6 +7,7 @@
 
 .app-layout {
   height: 100vh;
+  width:100vh;
 }
 
 .menu-sidebar {
@@ -78,4 +79,7 @@ nz-content {
   padding: 0px;
   background: #fff;
   height: 100%;
+}
+.app-drawer{
+  visibility: hidden;
 }

@@ -15,10 +15,10 @@
       <li nz-submenu nzOpen nzTitle="用户应用" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/map">健康机器人</a>
+            <a routerLink="/welcome">健康机器人</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">城市地图</a>
+            <a routerLink="/map">城市地图</a>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a>健身锻炼</a>
@@ -42,7 +42,10 @@
                nz-icon
                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             ></i>
+            
         </span>
+        <app-drawer class="app-drawer"></app-drawer>
+        <app-search class="app-search"></app-search>
       </div>
       
     </nz-header>

@@ -1,6 +1,6 @@
-<app-search nzSearch [nzAddOnAfter]="suffixIconButton">
-    <input type="text" nz-input placeholder="input search text" />
-  </app-search>
-  <ng-template #suffixIconButton>
-    <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
-  </ng-template>
+<nz-input-group class="input" nzSearch nzSize="default" [nzAddOnAfter]="suffixButton">
+  <input type="text" nz-input placeholder="请输入要搜索的内容" />
+</nz-input-group>
+<ng-template #suffixButton>
+  <button nz-button nzType="dashed" nzSize="default" nzSearch >搜索</button>
+</ng-template>

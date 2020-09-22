@@ -16,13 +16,23 @@ import zh from '@angular/common/locales/zh';
 import { MapComponent } from './map/map.component';
 import { MapModule } from './map/map.module';
 import { SearchComponent } from './search/search.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { DrawerComponent } from './drawer/drawer.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    DrawerComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +43,15 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MapModule
+    MapModule,
+    NzInputModule,
+    NzButtonModule,
+    NzDrawerModule,
+    NzTypographyModule,
+    NzDividerModule,
+    NzGridModule,
+    NzIconModule,
+    NzTabsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+.base{
+    margin-left: -10px;
+    margin-right: -20px;
+    margin-top:-15px;
+    margin-bottom: -20px;
+
+}
+img{
+    overflow: hidden;
+}
+.adress{
+    border-top:1px solid darkgray;
+    border-bottom:1px solid darkgray;
+    width: 100%;
+
+}
+.left-icon{
+    float: left;
+}
+.hos_adress{
+    margin-left: 9%;
+}
+.right-icon{
+    float: right;
+}
+.separate{
+    height:15px;
+    width:100%;
+    
+}
+.hos_info{
+    overflow: auto;
+}
