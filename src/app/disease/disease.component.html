@@ -1,0 +1,8 @@
+
+<div id="dmap" class="map"></div>
+<div class="buttonlist">
+    <button nz-button nzType="dashed" (click)="showDisease()" [disabled]="clicked">显示发病情况</button>
+    <button nz-button nzType="dashed" (click)="removeOverlayer()" [disabled]="!clicked">移除图层</button>
+    <!-- <button nz-button nzType="dashed" (click)="dispPrompt()">修改信息</button> -->
+    <button routerLink='admin' routerLinkActive="router-link-active" nz-button nzType="dashed">修改信息</button>
+</div>

@@ -1,0 +1,156 @@
+<div class="pageheader"></div>
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <div style="background: #ECECEC;padding:30px;" class="patientinfo">
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(myForm.value)" #myForm="ngForm">
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="patient_name">患者姓名</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="输入的用户名不能为空,长度不能超过10个字符">
+            <input nz-input  id="patient_name" formControlName="patient_name"/>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="diseasename" nzRequired>
+            <span>
+              得病名称
+            </span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="该项不能为空！">
+            <input nz-input id="diseasename" formControlName="diseasename" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <input type="checkbox" id="spearding" formControlName="spearding">
+            <label  >
+              <span>是否具有传染性</span>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <input type="checkbox" id="IsgetWell" formControlName="IsgetWell">
+            <label >
+              <span>是否痊愈</span>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <input type="checkbox" id="onceagain" formControlName="onceagain">
+            <label >
+              <span>是否复发</span>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid">提交保存</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+  <div nz-col nzSpan="12" class="statistic">
+    <div style="background: #ECECEC; padding: 30px;">
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(11.28 | number: '1.0-2')!"
+              [nzTitle]="'较上个月治愈人数'"
+              [nzPrefix]="prefixTplOne"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#3F8600' }"
+            >
+            </nz-statistic>
+            <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+          </nz-card>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(9.3 | number: '1.0-2')!"
+              [nzTitle]="'较上个月增加的患者'"
+              [nzPrefix]="prefixTplTwo"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#CF1322' }"
+            >
+            </nz-statistic>
+            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+          </nz-card>
+          
+        </nz-col>
+      </nz-row>
+    </div>
+    <div style="background: #ECECEC; padding: 30px;">
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(TotalGetWellNum | number)"
+              [nzTitle]="'总治愈人数'"
+              [nzPrefix]="prefixTplOne"
+              [nzSuffix]="'人'"
+              [nzValueStyle]="{ color: '#3F8600' }"
+            >
+            </nz-statistic>
+            <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+          </nz-card>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(TotalPatientNum | number)!"
+              [nzTitle]="'总患病人数'"
+              [nzPrefix]="prefixTplTwo"
+              [nzSuffix]="'人'"
+              [nzValueStyle]="{ color: '#CF1322' }"
+            >
+            </nz-statistic>
+            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+          </nz-card>
+          
+        </nz-col>
+      </nz-row>
+    </div>
+  </div>
+</div>
+<div class="patienttable">
+  <nz-table
+  nzShowSizeChanger
+  [nzData]="patient_infos"
+  [nzFrontPagination]="false"
+  [nzLoading]="loading"
+  [nzTotal]="total"
+  [nzPageSize]="pageSize"
+  [nzPageIndex]="pageIndex"
+  (nzQueryParams)="onQueryParamsChange($event)"
+>
+  <thead>
+    <tr>
+      <th nzColumnKey="patient_name" >姓名</th>
+      <th nzColumnKey="disease_kind" >患病名称</th>
+      <th nzColumnKey="IsGetWell"  >治愈</th>
+      <th nzColumnKey="spearding"  >传播性</th>
+      <th nzColumnKey="onceagain"  >复发</th>
+      <!-- [nzFilters]="filterGender"[nzSortFn]="false" -->
+      <th nzColumnKey="datetime" >时间</th>
+      <th nzColumnKey="action" >操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of patient_infos">
+      <td>{{ data.patient_name }}</td>
+      <td>{{ data.disease_kind }}</td>
+      <td>{{ data.IsgetWell }}</td>
+      <td>{{ data.spearding }}</td>
+      <td>{{ data.onceagain }}</td>
+      <td>{{ data.datatime }}</td>
+      <td>
+        <a (click)="todelete(data)">删除</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+  </div>

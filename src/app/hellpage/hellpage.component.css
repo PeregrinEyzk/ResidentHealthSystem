@@ -159,3 +159,13 @@ svg {
     font-family: "Titan One", san-serif;
   }
 }
+
+#wenzi{
+  display: block;
+  fill: #7b00e0;
+  opacity: 0.5;
+  right: 0;
+  width: 60%;
+  position:absolute; 
+  
+}

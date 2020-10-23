@@ -1,6 +1,11 @@
 <nz-input-group class="input" nzSearch nzSize="default" [nzAddOnAfter]="suffixButton">
-  <input type="text" nz-input placeholder="请输入要搜索的内容" />
+  <input type="text" nz-input [(ngModel)]="value" [nzAutocomplete]="auto" placeholder="请输入要搜索的内容" />
+  <nz-autocomplete #auto [compareWith]="compareFun">
+    <nz-auto-option *ngFor="let option of options" [nzValue]="option" [nzLabel]="option.label">
+      {{ option.label }}
+    </nz-auto-option>
+  </nz-autocomplete>
 </nz-input-group>
 <ng-template #suffixButton>
-  <button nz-button nzType="dashed" nzSize="default" nzSearch >搜索</button>
+  <button nz-button nzType="dashed" nzSize="default" nzSearch (click)="search()">搜索</button>
 </ng-template>

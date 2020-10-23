@@ -4,40 +4,63 @@
       <div nz-row>
         <div nz-col nzSpan="12">
           <div>
-          <img src={{imgUrl}} style="height: 100%;width:100%"></div>
+          <img src={{imgUrl}} style="height: 100%;width:100%;margin-top:10%"></div>
         </div>
       <div nz-col nzSpan="12">
-        <h5>{{hospital}}</h5>
-        <div>医院等级：{{hospital_class}}</div>
-        <div>医院性质：{{hospital_class}}</div>
-        <div>医院类别：{{hospital_class}}</div>
-        <div>医院电话：{{hospital_class}}</div>
-        <div>投诉电话：{{hospital_class}}</div>
+        <h5>{{yiyuan_title}}</h5>
+        <div>医院等级：{{yiyuan_dengji}}</div>
+        <div>医院性质：{{yiyuan_xingzhi}}</div>
+        <div>医院类别：{{yiyuan_leibie}}</div>
+        <div>医院电话：{{yiyuan_phone}}</div>
+        <div>投诉电话：{{yiyuan_phone2}}</div>
       </div>
       <div class="adress">
           <div class="left-icon"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
           </svg></div>
-          <div class="hos_adress"><a href="/map"style="color: darkgray;">{{hos_adress}}</a><div class="right-icon"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <div class="hos_adress"><a href="/map" style="color: darkgray;" nz-tooltip nzTooltipTitle={{gongjiaotip}}>{{hos_adress}}</a><div class="right-icon"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-11.5.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
           </svg></div></div>
       </div>
       <div class="separate"></div>
       <div class="hos_info">
-        <nz-tabset>
+        <nz-tabset style="height: 300px;overflow:auto">
           <nz-tab nzTitle="医院介绍" >
             {{yiyuanjieshao}}
           </nz-tab>
           <nz-tab nzTitle="医院科室" > 
             {{yiyuankeshi}}
           </nz-tab>
-          <nz-tab nzTitle="科室床位">
+          <nz-tab nzTitle="科室床位" >
             {{keshichuangwei}}
+            <div nz-row *ngFor="let bed of beds" style="width: 350px;" >
+              <div class="list" nz-col nzSpan="12" nz-tooltip nzTooltipTitle={{bed.tip}}>{{bed.keshi}}</div>
+              <div class="list" nz-col nzSpan="12"><nz-tag [nzColor]=bed.tagColor>{{bed.num}}</nz-tag></div>
+            </div>
           </nz-tab>
         </nz-tabset>
       </div>
       </div>
       </div>
-
+      <nz-divider></nz-divider>
+      <div>居民评价</div>
+      <div class="mycomment">
+        <!-- <nz-pagination [nzPageIndex]="1" [nzTotal]="50" nzSimple pageSizeOptions=1 > -->
+        <nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" nzBordered=false>
+          <ng-template #item let-item>
+            
+            <nz-comment [nzAuthor]="item.author" [nzDatetime]="item.datetime" >
+              <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+              
+              <nz-comment-content>
+                <nz-rate [ngModel]="item.star_num" nzDisabled [nzAllowHalf]=true></nz-rate>
+                <p>{{ item.content }}</p>
+              </nz-comment-content>
+              <nz-comment-action>Reply to</nz-comment-action>
+            </nz-comment>
+          </ng-template>
+        </nz-list>
+      <!-- </nz-pagination> -->
+      </div>
 
     </nz-drawer>

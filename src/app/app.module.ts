@@ -25,6 +25,19 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzRateModule } from 'ng-zorro-antd/rate';
+import { WeatherComponent } from './weather/weather.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { DrawService } from './services/draw.service';
+import {EventService} from './services/event-service.service'
+import { ClinicDrawerComponent } from './clinic-drawer/clinic-drawer.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { DiseaseComponent } from './disease/disease.component';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 
 registerLocaleData(zh);
 
@@ -32,7 +45,10 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     SearchComponent,
-    DrawerComponent
+    DrawerComponent,
+    WeatherComponent,
+    ClinicDrawerComponent,
+    DiseaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +67,14 @@ registerLocaleData(zh);
     NzDividerModule,
     NzGridModule,
     NzIconModule,
-    NzTabsModule
+    NzTabsModule,
+    NzCommentModule,
+    NzListModule,
+    NzAvatarModule,
+    NzPaginationModule,
+    NzRateModule,NzToolTipModule,NzTagModule,NzAutocompleteModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{ provide: [NZ_I18N], useValue: zh_CN},EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

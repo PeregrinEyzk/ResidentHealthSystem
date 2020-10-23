@@ -1,0 +1,112 @@
+.pageheader{
+  height: 20px;
+}
+.patienttable{
+  max-height:300px;
+  overflow:auto;
+}
+.patientinfo{
+  max-height:330px;
+  overflow:auto;
+}
+.statistic{
+  max-height:330px;
+  overflow:hidden;
+}
+.ant-advanced-search-form {
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+  }
+
+  .search-result-list {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 200px;
+    max-height: 400px;
+    text-align: center;
+    padding-top: 80px;
+    overflow: auto;
+  }
+
+  .search-area {
+    text-align: right;
+  }
+  [nz-form] {
+    max-width: 600px;
+  }
+
+  .register-are {
+    margin-bottom: 8px;
+  }
+  .patientinfo::-webkit-scrollbar{ 
+
+    width:10px;
+    
+    }
+    
+    .patientinfo::-webkit-scrollbar-track{
+    
+    background: #d9d9d9;
+    
+      border-radius:2px;
+    
+    }
+    
+    .patientinfo::-webkit-scrollbar-thumb{
+    
+      background:#91d5ff;
+    
+      border-radius:10px;
+    
+    }
+    
+    .patientinfo::-webkit-scrollbar-thumb:hover{
+    
+      background: #333;
+    
+    }
+    
+    .patientinfo::-webkit-scrollbar-corner{
+    
+      background: #179a16;
+    
+    }
+
+
+  .patienttable::-webkit-scrollbar{ 
+
+    width:10px;
+    
+    }
+    
+    .patienttable::-webkit-scrollbar-track{
+    
+    background: #d9d9d9;
+    
+      border-radius:2px;
+    
+    }
+    
+    .patienttable::-webkit-scrollbar-thumb{
+    
+      background:#91d5ff;
+    
+      border-radius:10px;
+    
+    }
+    
+    .patienttable::-webkit-scrollbar-thumb:hover{
+    
+      background: #333;
+    
+    }
+    
+    .patienttable::-webkit-scrollbar-corner{
+    
+      background: #179a16;
+    
+    }

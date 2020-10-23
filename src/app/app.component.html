@@ -12,41 +12,58 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="用户应用" nzIcon="dashboard">
+      <li nz-submenu nzOpen nzTitle="用户应用" nzIcon="bars">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/welcome">健康机器人</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/map">城市地图</a>
+            <a routerLink="/map">医疗资源地图</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>健身锻炼</a>
+            <a routerLink="/exercise">健身锻炼</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="城市健康数据" nzIcon="form">
+      <li nz-submenu nzOpen nzTitle="城市健康数据" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>疾病风险</a>
+            <a routerLink="/disease">疾病风险</a>
           </li>
         </ul>
       </li>
     </ul>
+    
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
-            
-        </span>
-        <app-drawer class="app-drawer"></app-drawer>
-        <app-search class="app-search"></app-search>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span2">
+              <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+                <i class="trigger"
+                   nz-icon
+                   [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                ></i>  
+            </span>
+            </div>
+            <div class="span6">
+              <app-weather class="app-weather"></app-weather>
+            </div>
+            <div class="span4">
+              <app-search class="app-search"></app-search>
+            </div>
+          </div>
+        </div>
+        
+        
       </div>
+        <app-drawer class="app-drawer"></app-drawer>
+        <app-clinic-drawer class="app-drawer"></app-clinic-drawer>
+        <!-- </div>
+        
+      </div> -->
       
     </nz-header>
     <nz-content>

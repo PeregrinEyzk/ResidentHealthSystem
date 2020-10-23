@@ -1,0 +1,13 @@
+
+.map{
+    height:95%;
+    widows: 100%;
+}
+#dmap{
+    height:95%;
+    widows: 100%;
+}
+.buttonlist{
+    height:5%;
+    z-index: 10;
+}

@@ -1,0 +1,106 @@
+.base{
+    margin-left: -10px;
+    margin-right: -20px;
+    margin-top:-15px;
+    margin-bottom: -20px;
+
+}
+
+nz-divider{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+h5{
+    text-align: center;
+}
+nz-tag{
+    margin-left: 35%;
+    margin-right: 30%;
+}
+img{
+    overflow: hidden;
+    height: 30%;
+    width:30%;
+    max-width: 300px;
+    min-width: 150px;
+}
+.adress{
+    border-top:1px solid darkgray;
+    border-bottom:1px solid darkgray;
+    width: 100%;
+
+}
+.left-icon{
+    float: left;
+}
+.hos_adress{
+    margin-left: 9%;
+}
+.right-icon{
+    float: right;
+}
+.separate{
+    height:15px;
+    width:100%;
+    
+}
+.hos_info{
+    overflow: auto;
+}
+
+nz-rate{
+    size: 1px;
+}
+.list{
+    border-right-style:solid;
+    border-right-width:1px;
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+
+}
+
+nz-tabset::-webkit-scrollbar{ 
+    width:10px;
+}
+
+nz-tabset::-webkit-scrollbar-track{
+    background: #d9d9d9;
+    border-radius:2px;
+}
+
+nz-tabset::-webkit-scrollbar-thumb{
+    background:#91d5ff;
+    border-radius:10px;
+}
+
+nz-tabset::-webkit-scrollbar-thumb:hover{
+    background: #333;
+}
+
+nz-tabset::-webkit-scrollbar-corner{
+    background: #179a16;
+}
+nz-drawer::-webkit-scrollbar{ 
+    width:10px;
+}
+
+nz-drawer::-webkit-scrollbar-track{
+    background: #d9d9d9;
+    border-radius:2px;
+}
+
+nz-drawer::-webkit-scrollbar-thumb{
+    background:#91d5ff;
+    border-radius:10px;
+}
+
+nz-drawer::-webkit-scrollbar-thumb:hover{
+    background: #333;
+}
+
+nz-drawer::-webkit-scrollbar-corner{
+    background: #179a16;
+}
+.jiezhong{
+    color: #73d13d;
+}

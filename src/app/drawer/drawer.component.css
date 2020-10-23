@@ -31,3 +31,48 @@ img{
 .hos_info{
     overflow: auto;
 }
+
+nz-rate{
+    size: 1px;
+}
+.list{
+    border-right-style:solid;
+    border-right-width:1px;
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+
+}
+
+nz-tabset::-webkit-scrollbar{ 
+
+    width:10px;
+    
+    }
+    
+    nz-tabset::-webkit-scrollbar-track{
+    
+    background: #d9d9d9;
+    
+      border-radius:2px;
+    
+    }
+    
+    nz-tabset::-webkit-scrollbar-thumb{
+    
+      background:#91d5ff;
+    
+      border-radius:10px;
+    
+    }
+    
+    nz-tabset::-webkit-scrollbar-thumb:hover{
+    
+      background: #333;
+    
+    }
+    
+    nz-tabset::-webkit-scrollbar-corner{
+    
+      background: #179a16;
+    
+    }
